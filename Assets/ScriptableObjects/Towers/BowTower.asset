@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2a75ac6155b7b419cac9bc07ca00d4, type: 3}
   m_Name: BowTower
   m_EditorClassIdentifier: 
-  attackSpeed: 0
-  projectileSpeed: 0
-  attackDamage: 0
-  attackRange: 0
-  tier: 0
+  attackSpeed: 3
+  projectileSpeed: 3
+  attackDamage: 20
+  attackRange: 5
+  tier: 1
   display: {fileID: 0}

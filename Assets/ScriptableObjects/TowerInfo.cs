@@ -6,7 +6,7 @@ using UnityEngine;
 public class TowerInfo : ScriptableObject
 {
     public double attackSpeed;
-    public double projectileSpeed;
+    public float projectileSpeed;
     public double attackDamage;
     public double attackRange;
     public int tier;
