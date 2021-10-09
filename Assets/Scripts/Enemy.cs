@@ -26,24 +26,21 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         var dest = path.pathPoints[1];
-        if (transform.position.x != dest.x && transform.position.y != dest.y)
+        float newX = transform.position.x;
+        float newY = transform.position.y;
+
+        float amt = 0.01f;
+
+        if (Math.Round(transform.position.x) != Math.Round(dest.x))
         {
-            float newX = 0;
-            float newY = 0;
-
-            float amt = 0.01f;
-
-            if (transform.position.x != dest.x)
-            {
-                newX = (transform.position.x > dest.x) ? dest.x + amt : dest.x - amt;
-            }
-
-            if (transform.position.y != dest.y)
-            {
-                newY = (transform.position.y > dest.y) ? dest.y + amt : dest.y - amt;
-            }
-
-            transform.position = new Vector3(newX, newY);
+            newX += (transform.position.x > dest.x) ? -amt : amt;
         }
+
+        if (Math.Round(transform.position.y) != Math.Round(dest.y))
+        {
+            newY += (transform.position.y > dest.y) ? -amt : amt;
+        }
+
+        transform.position = new Vector3(newX, newY);
     }
 }
