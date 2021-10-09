@@ -26,8 +26,8 @@ public class Tower : MonoBehaviour
     public void Shoot()
     {
         GameObject projectile = GameObject.Instantiate(projectilePrefab, transform);
-        projectile.transform.Translate((projectile.transform.forward * towerInformation.projectileSpeed * Time.deltaTime));
-
+        //projectile.transform.Translate((projectile.transform.forward * towerInformation.projectileSpeed * Time.deltaTime));
+        projectile.transform.position = new Vector3(-10, -10, -1);
     }
 
 }
