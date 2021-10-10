@@ -18,16 +18,19 @@ public class Tower : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
-        { 
+        {
             Shoot();
         }
     }
     
     public void Shoot()
     {
-        GameObject projectile = GameObject.Instantiate(projectilePrefab, transform);
-        //projectile.transform.Translate((projectile.transform.forward * towerInformation.projectileSpeed * Time.deltaTime));
-        projectile.transform.position = new Vector3(-10, -10, -1);
+        GameObject projectile = GameObject.Instantiate(projectilePrefab, transform.position, transform.rotation);
+
+        
+        projectile.transform.position = transform.up * towerInformation.projectileSpeed * Time.deltaTime;
+
+
     }
 
 }

@@ -11,4 +11,5 @@ public class TowerInfo : ScriptableObject
     public double attackRange;
     public int tier;
     public Sprite display;
+    Vector3 towerVector;
 }
