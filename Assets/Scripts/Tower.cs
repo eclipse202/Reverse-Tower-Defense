@@ -8,8 +8,6 @@ public class Tower : MonoBehaviour
 
     public GameObject projectilePrefab;
 
-
-
     private void Start()
     {
            

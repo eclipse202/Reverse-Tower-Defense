@@ -6,8 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
-    public EnemyInfo EnemyInformation;
-
     Rigidbody2D rb;
 
     void Start()
@@ -22,11 +20,5 @@ public class Enemy : MonoBehaviour
 
         var follow = gameObject.AddComponent<FollowPath>();
         follow.StartFollowing(pathPoints, true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -37,17 +37,18 @@ public class Money : MonoBehaviour
         if (x - totalMoney < 0)
         {
             Debug.Log("not enough money to subtract");
+            return; 
         }
 
         Debug.Log("subtracted " + x + " to money");
-        totalMoney = totalMoney + x;
+        totalMoney = totalMoney - x;
     }
 
     public static void MoneySetAmount(int x)
     {
         x = System.Math.Abs(x);
         Debug.Log("set " + x + " to money");
-        totalMoney = totalMoney + x;
+        totalMoney = x;
     }
 
 }
