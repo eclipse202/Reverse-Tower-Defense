@@ -31,8 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
     public static void CostOfEnemy()
     {
-        EnemySpawner enemySpawner = gameObject.GetComponent<EnemySpawner>();
-        public static int cost = enemySpawner.costOfEnemy;
+
     }
     
    

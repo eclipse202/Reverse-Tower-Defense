@@ -3,7 +3,10 @@ using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
-    static int cost = EnemySpawner.CostOfEnemy();
+
+
+}
+    /*static int cost = EnemySpawner.cost;
 
     public GameObject textDisplay;
 
@@ -29,5 +32,5 @@ public class PlayerHUD : MonoBehaviour
             return stringOfMoney;
         }
         return "something doesnt have a value";
-    }
-}
+    */
+

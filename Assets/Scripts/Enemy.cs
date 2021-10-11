@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
+    public EnemyInfo enemyInformation;
+    public TowerInfo towerInformation;
+
     Rigidbody2D rb;
 
     void Start()
@@ -20,5 +23,31 @@ public class Enemy : MonoBehaviour
 
         var follow = gameObject.AddComponent<FollowPath>();
         follow.StartFollowing(pathPoints, true);
+    }
+
+    private void Update()
+    {
+        CheckDeath();
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Projectile")
+        {
+           var colliderInfo = collision.gameObject.GetComponent<Projectile>();
+            enemyInformation.health = -colliderInfo.towerInformation.attackDamage;
+        }
+    }
+
+    public void CheckDeath()
+    {
+        if (enemyInformation.health != null)
+        {
+            if (enemyInformation.health <= 0)
+            {
+                Destroy(gameObject);
+
+            }
+        } 
     }
 }

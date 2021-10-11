@@ -10,5 +10,6 @@ public class EnemyInfo : ScriptableObject
     public int tier;
     public Sprite display;
     public int moneyCost;
+    public int attackDamage;
 
 }
