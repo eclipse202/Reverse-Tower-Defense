@@ -5,22 +5,12 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
-    public static int totalMoney = 0;
+    public static int totalMoney = 100;
     public GameObject textDisplay;
 
     private void Update()
     {
-       textDisplay.GetComponent<Text>().text = "Money: " + MoneyToString(totalMoney);
-    }
-
-    public static string MoneyToString(int x)
-    {
-        if (totalMoney != null)
-        {
-            string stringOfMoney = totalMoney.ToString();
-            return stringOfMoney;
-        }
-        return "something doesnt have a value";
+       textDisplay.GetComponent<Text>().text = "Money: " + totalMoney.ToString();
     }
 
     public static void MoneyDeposit(int x) 
