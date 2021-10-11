@@ -1,22 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WallScript : MonoBehaviour
 {
-    public string nextLevel;
+    public NextLevelName nextLevel;
+
+    
 
     public int health;
 
-    // Update is called once per frame
+    private bool i = true;
+
     void Update()
     {
-        if (health <= 0)
+        if (i == true)
         {
-            SceneManager.LoadScene("WinScreen", LoadSceneMode.Single);
-        }
+            
+            if (health <= 0)
+            {
+                LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
 
+                newLevelControler.WinScreenAppear();
+
+                i = false;
+
+            }
+        }
+        if (i == false)
+        {
+            LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("space pressed");
+                newLevelControler.LevelChanger();
+            }
+
+        }
     }
+           
+        
+        
+    
+       
+    
+      
+
 }
 

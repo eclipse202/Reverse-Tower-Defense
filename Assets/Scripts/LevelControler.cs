@@ -4,19 +4,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelControler : MonoBehaviour
 {
-    private WallScript wallScriptInfo;
-
-    public static string level;
+    private void Start()
+    {
+        transform.position = transform.forward * 1;
+    }
 
     private void Awake()
     {
-        wallScriptInfo = GetComponent<WallScript>();
+        
+    }
+
+    public void WinScreenAppear()
+    {
+        transform.position = transform.forward * -10;
+        Debug.Log("hit space to continue");
     }
 
     public void LevelChanger()
     {
-        Debug.Log("button click");
-        level = wallScriptInfo.nextLevel;
+        string level = NextLevelName.nextLevel;
 
         switch (level)
         {
@@ -35,7 +41,21 @@ public class LevelControler : MonoBehaviour
             case "Level3":
                 SceneManager.LoadScene("Level3", LoadSceneMode.Single);
                 break;
-                
+
         }
+
+        return;
     }
+
+    public static void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
+    public static void GoToSampleScene()
+    {
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+    }
+
+
 }
