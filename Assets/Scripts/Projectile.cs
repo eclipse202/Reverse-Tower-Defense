@@ -13,9 +13,12 @@ public class Projectile : MonoBehaviour
     {
         rb.velocity = transform.up * towerInformation.projectileSpeed;
     }
+  
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 
-   
 
-   
 
 }
