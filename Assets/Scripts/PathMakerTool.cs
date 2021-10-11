@@ -34,7 +34,7 @@ public class PathMakerTool : MonoBehaviour
             string codeForPoints = "List<Vector3> pathPoints = new List<Vector3>();\n";
             foreach (var point in pathPoints)
             {
-                codeForPoints += $"pathPoints.Add(new Vector3({point.x}f,{point.y}f));\n";
+                codeForPoints += $"pathPoints.Add(new Vector3({point.x}f, {point.y}f));\n";
             }
 
             codeForPoints.CopyToClipboard();

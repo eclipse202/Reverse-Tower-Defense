@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7367771729828439952, guid: b7e6ec7e45c885f40913d41163ad7f01, type: 3}
+      propertyPath: pathPoints
+      value: 
+      objectReference: {fileID: 11400000, guid: 15f974c72de8b334e81e44223c1e01dd, type: 2}
+    - target: {fileID: 7367771729828439954, guid: b7e6ec7e45c885f40913d41163ad7f01, type: 3}
+      propertyPath: pathPoints
+      value: 
+      objectReference: {fileID: 11400000, guid: 15f974c72de8b334e81e44223c1e01dd, type: 2}
+    - target: {fileID: 7367771729828439955, guid: b7e6ec7e45c885f40913d41163ad7f01, type: 3}
+      propertyPath: pathPoints
+      value: 
+      objectReference: {fileID: 11400000, guid: 15f974c72de8b334e81e44223c1e01dd, type: 2}
     - target: {fileID: 7367771729828439957, guid: b7e6ec7e45c885f40913d41163ad7f01, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

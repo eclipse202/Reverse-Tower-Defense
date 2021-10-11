@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 274931414067373482}
   m_Layer: 0
   m_Name: FighterEnemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3634d1abb255f2e40a96c99a75ef7316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInformation: {fileID: 11400000, guid: ee47004f33a55ce4bb0573e4b8dd63cb, type: 2}
-  towerInformation: {fileID: 0}
+  enemyInfo: {fileID: 11400000, guid: ee47004f33a55ce4bb0573e4b8dd63cb, type: 2}
+  path: []
 --- !u!1 &943289308181872184
 GameObject:
   m_ObjectHideFlags: 0

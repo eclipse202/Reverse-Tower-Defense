@@ -4,35 +4,24 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public EnemyInfo enemyInformation;
     public KeyCode keyToTriggerSpawn;
     public GameObject enemyPrefab;
-    public int costOfEnemy;
+    public PathInfo pathPoints;
 
-    private void Start()
-    {
-
-    }
-
-   
     void Update()
     {
         if (Input.GetKeyDown(keyToTriggerSpawn))
         {
             SpawnEnemy();
         }
-
-        void SpawnEnemy()
-        {
-            Instantiate(enemyPrefab, new Vector3(-9, 0, 0), Quaternion.identity);
-            Money.MoneyWithdraw(costOfEnemy);
-        }
     }
 
-    public static void CostOfEnemy()
+    void SpawnEnemy()
     {
-
+        var enemyGameObject = Instantiate(enemyPrefab, new Vector3(-9, 0, 0), Quaternion.identity);
+        var enemy = enemyGameObject.GetComponent<Enemy>();
+        
+        Money.MoneyWithdraw(enemy.enemyInfo.moneyCost);
+        enemy.FollowPath(pathPoints);
     }
-    
-   
 }
