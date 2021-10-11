@@ -9,6 +9,12 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public int costOfEnemy;
 
+    private void Start()
+    {
+
+    }
+
+   
     void Update()
     {
         if (Input.GetKeyDown(keyToTriggerSpawn))
@@ -23,8 +29,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-
-
-
-
+    public static void CostOfEnemy()
+    {
+        EnemySpawner enemySpawner = gameObject.GetComponent<EnemySpawner>();
+        public static int cost = enemySpawner.costOfEnemy;
+    }
+    
+   
 }
