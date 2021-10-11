@@ -26,7 +26,7 @@ public class Money : MonoBehaviour
     public static void MoneyDeposit(int x) 
     {
         x = System.Math.Abs(x);
-        Debug.Log("added" + x + "to money");
+        Debug.Log("added " + x + " to money");
         totalMoney = totalMoney + x;
     }
 
@@ -39,14 +39,14 @@ public class Money : MonoBehaviour
             Debug.Log("not enough money to subtract");
         }
 
-        Debug.Log("subtracted" + x + "to money");
+        Debug.Log("subtracted " + x + " to money");
         totalMoney = totalMoney + x;
     }
 
     public static void MoneySetAmount(int x)
     {
         x = System.Math.Abs(x);
-        Debug.Log("set" + x + "to money");
+        Debug.Log("set " + x + " to money");
         totalMoney = totalMoney + x;
     }
 
