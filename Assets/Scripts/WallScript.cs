@@ -29,10 +29,9 @@ public class WallScript : MonoBehaviour
         }
         if (i == false)
         {
-            LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
-
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
                 Debug.Log("space pressed");
                 newLevelControler.LevelChanger();
             }

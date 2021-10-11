@@ -16,3 +16,4 @@ MonoBehaviour:
   health: 160
   tier: 1
   display: {fileID: 0}
+  moneyCost: 10

@@ -9,5 +9,6 @@ public class EnemyInfo : ScriptableObject
     public double health;
     public int tier;
     public Sprite display;
+    public int moneyCost;
 
 }
