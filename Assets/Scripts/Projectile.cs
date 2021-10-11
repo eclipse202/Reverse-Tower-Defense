@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public double speed;
-    public double damage;
-    public double range;
-    
+    public TowerInfo towerInformation;
+    public Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb.velocity = transform.up * towerInformation.projectileSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
    
 

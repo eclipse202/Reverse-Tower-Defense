@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RockTower
   m_EditorClassIdentifier: 
   attackSpeed: 2
-  projectileSpeed: 1
+  projectileSpeed: 7
   attackDamage: 10
   attackRange: 4
   tier: 1

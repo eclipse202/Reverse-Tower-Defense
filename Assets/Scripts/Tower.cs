@@ -8,10 +8,11 @@ public class Tower : MonoBehaviour
 
     public GameObject projectilePrefab;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Start()
     {
-        
+           
     }
 
     // Update is called once per frame
@@ -25,12 +26,7 @@ public class Tower : MonoBehaviour
     
     public void Shoot()
     {
-        GameObject projectile = GameObject.Instantiate(projectilePrefab, transform.position, transform.rotation);
-
-        
-        projectile.transform.position = transform.up * towerInformation.projectileSpeed * Time.deltaTime;
-
-
+        Instantiate(projectilePrefab, transform.position, transform.rotation);
     }
 
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GunTower
   m_EditorClassIdentifier: 
   attackSpeed: 4
-  projectileSpeed: 10
+  projectileSpeed: 25
   attackDamage: 30
   attackRange: 6
   tier: 1
