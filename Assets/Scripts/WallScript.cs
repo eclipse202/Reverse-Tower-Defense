@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
-    public NextLevelName nextLevel;
-
-    
+    public NextLevelInfo nextLevelInfo;
 
     public int health;
 
@@ -33,7 +31,8 @@ public class WallScript : MonoBehaviour
             {
                 LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
                 Debug.Log("space pressed");
-                newLevelControler.LevelChanger();
+                newLevelControler.LevelChanger(nextLevelInfo.nextLevel.ToString());
+                Debug.Log("after space pressed");
             }
 
         }

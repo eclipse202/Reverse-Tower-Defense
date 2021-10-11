@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelControler : MonoBehaviour
 {
+
+    public Renderer rend;
     private void Start()
     {
-        transform.position = transform.forward * 1;
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
     }
 
     private void Awake()
@@ -16,20 +19,17 @@ public class LevelControler : MonoBehaviour
 
     public void WinScreenAppear()
     {
-        transform.position = transform.forward * -10;
-        Debug.Log("hit space to continue");
+        rend.enabled = true;
+        Debug.Log("winscreeappears");
     }
 
-    public void LevelChanger()
+    public void LevelChanger(string level)
     {
-        string level = NextLevelName.nextLevel;
-
         switch (level)
         {
             case "MainMenu":
                 SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
                 break;
-
             case "SampleScene":
                 SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
                 break;
@@ -41,6 +41,11 @@ public class LevelControler : MonoBehaviour
             case "Level3":
                 SceneManager.LoadScene("Level3", LoadSceneMode.Single);
                 break;
+
+            default:
+                Debug.Log("error, levelchanger switch");
+                break;
+      
 
         }
 
@@ -55,6 +60,11 @@ public class LevelControler : MonoBehaviour
     public static void GoToSampleScene()
     {
         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+    }
+
+    public static void GoToTutorialPage()
+    {
+        SceneManager.LoadScene("TutorialPage", LoadSceneMode.Single);
     }
 
 

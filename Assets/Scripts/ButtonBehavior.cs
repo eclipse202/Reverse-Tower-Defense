@@ -10,4 +10,12 @@ public class ButtonBehavior : MonoBehaviour
     {
         LevelControler.GoToSampleScene();
     }
+    public void OnButtonPressTutorial()
+    {
+        LevelControler.GoToTutorialPage();
+    }
+    public void OnButtonPressExit()
+    {
+        Application.Quit();
+    }
 }

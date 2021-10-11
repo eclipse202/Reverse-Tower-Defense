@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class NextLevelName : ScriptableObject
+public class NextLevelInfo : ScriptableObject
 {
-    public static string nextLevel; 
+
+    public string nextLevel;
+
 }
