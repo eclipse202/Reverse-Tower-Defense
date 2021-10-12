@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3634d1abb255f2e40a96c99a75ef7316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyInfo: {fileID: 0}
 --- !u!114 &7367771729828439952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,10 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19bcfa81a7f59c409dd764b92558d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInformation: {fileID: 11400000, guid: ac69628e7232e4b4dbc31e3aceacd922, type: 2}
   keyToTriggerSpawn: 49
   enemyPrefab: {fileID: 2728491916127303119, guid: 59a198b938c1e614bb1341faab0a898c, type: 3}
-  costOfEnemy: 0
+  pathPoints: {fileID: 11400000, guid: 8e8401c6009dc0e4097635e60fb9f088, type: 2}
 --- !u!114 &7367771729828439955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19bcfa81a7f59c409dd764b92558d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInformation: {fileID: 11400000, guid: ee47004f33a55ce4bb0573e4b8dd63cb, type: 2}
   keyToTriggerSpawn: 50
   enemyPrefab: {fileID: 274931414067373485, guid: bfedb55a41d667c419cc98faf988873a, type: 3}
-  costOfEnemy: 0
+  pathPoints: {fileID: 11400000, guid: 8e8401c6009dc0e4097635e60fb9f088, type: 2}
 --- !u!114 &7367771729828439954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19bcfa81a7f59c409dd764b92558d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInformation: {fileID: 11400000, guid: 0bf84dde634ce434ba6693b78914d400, type: 2}
   keyToTriggerSpawn: 51
   enemyPrefab: {fileID: 8687855931258961410, guid: 78d795d714c04134dbe525f8f6da52cc, type: 3}
-  costOfEnemy: 0
+  pathPoints: {fileID: 11400000, guid: 8e8401c6009dc0e4097635e60fb9f088, type: 2}
