@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   speed: 1
-  health: 200
+  health: 40
   tier: 1
   display: {fileID: 0}
-  moneyCost: 25
+  moneyCost: 15
   attackDamage: 10

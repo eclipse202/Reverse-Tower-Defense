@@ -11,7 +11,6 @@ public class ButtonBehavior : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
         Player.Instance.wallet.SetCash(100);
-        //LevelControler.GoToSampleScene();
     }
 
     public void OnButtonPressExit()

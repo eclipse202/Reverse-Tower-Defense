@@ -5,6 +5,7 @@ public class PlayerHUD : MonoBehaviour
 {
     public static PlayerHUD Instance { get; private set; }
     public Text cashText;
+    public Text wallHealthText;
 
     private void Awake()
     {
@@ -18,5 +19,10 @@ public class PlayerHUD : MonoBehaviour
     public static void UpdateCashText(int amount)
     {
         Instance.cashText.text = "Cash: " + amount.ToString();
+    }
+
+    public static void UpdateWallHealthText(int amount)
+    {
+        Instance.wallHealthText.text = "Wall Health: " + amount.ToString();
     }
 }

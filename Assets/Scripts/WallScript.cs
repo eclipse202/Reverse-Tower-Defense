@@ -7,6 +7,11 @@ public class WallScript : MonoBehaviour
     public string nextSceneName;
     public int health;
 
+    private void Start()
+    {
+        PlayerHUD.UpdateWallHealthText(health);
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.ToLower() != "enemy")
@@ -20,6 +25,8 @@ public class WallScript : MonoBehaviour
     private void OnTakeDamage(int amount)
     {
         health -= amount;
+        Player.Instance.wallet.AddCash(amount);
+        PlayerHUD.UpdateWallHealthText(health);
         if (health > 0)
             return;
 

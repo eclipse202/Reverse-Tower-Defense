@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2a75ac6155b7b419cac9bc07ca00d4, type: 3}
   m_Name: GunTower
   m_EditorClassIdentifier: 
-  attackSpeed: 4
-  projectileSpeed: 25
-  attackDamage: 30
-  attackRange: 6
+  attackSpeed: 2.85
+  projectileSpeed: 13
+  attackDamage: 5
+  attackRange: 2.5
   tier: 1
   display: {fileID: 0}

@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719830da72613314ab72be8a08638057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusCashAmt: 15
+  timeBetweenBonusCash: 3.5

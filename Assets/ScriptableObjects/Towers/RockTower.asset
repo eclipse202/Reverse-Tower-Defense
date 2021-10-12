@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2a75ac6155b7b419cac9bc07ca00d4, type: 3}
   m_Name: RockTower
   m_EditorClassIdentifier: 
-  attackSpeed: 2
+  attackSpeed: 1.65
   projectileSpeed: 7
-  attackDamage: 10
-  attackRange: 4
+  attackDamage: 3
+  attackRange: 2
   tier: 1
   display: {fileID: 0}
