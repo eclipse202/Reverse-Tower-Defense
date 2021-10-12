@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
-    public EnemyInfo enemyInformation;
     public NextLevelInfo nextLevelInfo;
 
     public int health;
 
     private bool i = true;
 
-    private int GetAttackDamage()
-    {
-        return enemyInformation.attackDamage;
-    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            health =- GetAttackDamage();
+            var collider = collision.gameObject.GetComponent<Projectile>();
+            health =- collider.towerInformation.attackDamage;
             Destroy(collision.gameObject);
         }
     }

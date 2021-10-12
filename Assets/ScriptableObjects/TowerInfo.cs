@@ -7,7 +7,7 @@ public class TowerInfo : ScriptableObject
 {
     public double attackSpeed;
     public float projectileSpeed;
-    public double attackDamage;
+    public int attackDamage;
     public double attackRange;
     public int tier;
     public Sprite display;
