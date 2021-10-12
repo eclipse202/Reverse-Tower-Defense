@@ -14,8 +14,14 @@ public class WallScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            var collider = collision.gameObject.GetComponent<Projectile>();
+            // Before. You can delete this once you see it
+            /*var collider = collision.gameObject.GetComponent<Projectile>();
             health =- collider.towerInformation.attackDamage;
+            Destroy(collision.gameObject);*/
+
+            // after
+            var enemy = collision.gameObject.GetComponent<Enemy>();
+            health -= enemy.enemyInfo.attackDamage;
             Destroy(collision.gameObject);
         }
     }
@@ -24,7 +30,6 @@ public class WallScript : MonoBehaviour
     {
         if (i == true)
         {
-            
             if (health <= 0)
             {
                 LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
@@ -32,28 +37,18 @@ public class WallScript : MonoBehaviour
                 newLevelControler.WinScreenAppear();
 
                 i = false;
-
             }
         }
+
         if (i == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
                 Debug.Log("space pressed");
-                newLevelControler.LevelChanger(nextLevelInfo.nextLevel.ToString());
+                newLevelControler.LevelChanger(nextLevelInfo.nextLevel);
                 Debug.Log("after space pressed");
             }
-
         }
     }
-           
-        
-        
-    
-       
-    
-      
-
 }
-
