@@ -14,4 +14,13 @@ public class Enemy : MonoBehaviour
         follow.moveSpeed = (float)enemyInfo.speed;
         follow.StartFollowing(path.pathPoints, true);
     }
+
+    public void RemoveHealth(double amount)
+    {
+        enemyInfo.health -= amount;
+        if (enemyInfo.health <= 0)
+        {
+            Destroy(gameObject);            
+        }
+    }
 }
