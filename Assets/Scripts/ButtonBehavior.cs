@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
@@ -8,12 +9,11 @@ public class ButtonBehavior : MonoBehaviour
 
     public void OnButtonPress()
     {
-        LevelControler.GoToSampleScene();
+        SceneManager.LoadScene("SampleScene");
+        Player.Instance.wallet.SetCash(100);
+        //LevelControler.GoToSampleScene();
     }
-    public void OnButtonPressTutorial()
-    {
-        LevelControler.GoToTutorialPage();
-    }
+
     public void OnButtonPressExit()
     {
         Application.Quit();

@@ -20,8 +20,16 @@ public class EnemySpawner : MonoBehaviour
     {
         var enemyGameObject = Instantiate(enemyPrefab, new Vector3(-9, 0, 0), Quaternion.identity);
         var enemy = enemyGameObject.GetComponent<Enemy>();
-        
-        Money.MoneyWithdraw(enemy.enemyInfo.moneyCost);
+
+        var enemyCost = enemy.enemyInfo.moneyCost;
+        var wallet = Player.Instance.wallet;
+        if (!wallet.CanAfford(enemyCost))
+        {
+            GameObject.Destroy(enemyGameObject);
+            return;
+        }
+
+        wallet.RemoveCash(enemyCost);
         enemy.FollowPath(pathPoints);
     }
 }

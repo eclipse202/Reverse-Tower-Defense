@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            LevelControler.GoToMainMenu();
+            //LevelControler.GoToMainMenu();
         }
         
     }

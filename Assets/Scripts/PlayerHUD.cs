@@ -3,18 +3,20 @@ using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
-    //static int cost = EnemySpawner.CostOfEnemy();
-    static int cost = 0;
+    public static PlayerHUD Instance { get; private set; }
+    public Text cashText;
 
-    public Text textDisplay;
-
-    void Start()
+    private void Awake()
     {
-        textDisplay.GetComponent<Text>().text = "Cost: " + cost.ToString();
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            Instance = this;
+        }
     }
-
-    private void Update()
+    
+    public static void UpdateCashText(int amount)
     {
-        
+        Instance.cashText.text = "Cash: " + amount.ToString();
     }
 }

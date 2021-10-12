@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
-    public NextLevelInfo nextLevelInfo;
-
+    public string nextSceneName;
     public int health;
-
-    private bool i = true;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            // Before. You can delete this once you see it
-            /*var collider = collision.gameObject.GetComponent<Projectile>();
-            health =- collider.towerInformation.attackDamage;
-            Destroy(collision.gameObject);*/
+        if (collision.gameObject.tag.ToLower() != "enemy")
+            return;
 
-            // after
-            var enemy = collision.gameObject.GetComponent<Enemy>();
-            health -= enemy.enemyInfo.attackDamage;
-            Destroy(collision.gameObject);
-        }
+        var enemy = collision.gameObject.GetComponent<Enemy>();
+        OnTakeDamage(enemy.enemyInfo.attackDamage);
+        Destroy(collision.gameObject);
+    }
+
+    private void OnTakeDamage(int amount)
+    {
+        health -= amount;
+        if (health > 0)
+            return;
+
+        OnKill();
+    }
+
+    private void OnKill()
+    {
+        LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
+        newLevelControler.WinScreenAppear();
+        newLevelControler.LevelChanger(nextSceneName);
     }
 
     void Update()
     {
-        if (i == true)
+        /*if (i == true)
         {
             if (health <= 0)
             {
                 LevelControler newLevelControler = GameObject.Find("WinSquare").GetComponent<LevelControler>();
-
                 newLevelControler.WinScreenAppear();
 
                 i = false;
@@ -49,6 +55,6 @@ public class WallScript : MonoBehaviour
                 newLevelControler.LevelChanger(nextLevelInfo.nextLevel);
                 Debug.Log("after space pressed");
             }
-        }
+        }*/
     }
 }

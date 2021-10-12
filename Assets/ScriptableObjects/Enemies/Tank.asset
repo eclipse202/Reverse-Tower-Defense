@@ -17,4 +17,4 @@ MonoBehaviour:
   tier: 1
   display: {fileID: 0}
   moneyCost: 25
-  attackDamage: 0
+  attackDamage: 10

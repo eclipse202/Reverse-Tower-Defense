@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Runner
   m_EditorClassIdentifier: 
   speed: 3.5
-  health: 120
+  health: -20
   tier: 1
   display: {fileID: 0}
   moneyCost: 5
+  attackDamage: 5
