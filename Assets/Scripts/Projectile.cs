@@ -11,7 +11,14 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void Init(TowerInfo info)
+    {
+        towerInformation = info;
         rb.velocity = transform.up * towerInformation.projectileSpeed;
+        Destroy(this.gameObject, 2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,6 +28,7 @@ public class Projectile : MonoBehaviour
 
         var enemy = collision.gameObject.GetComponent<Enemy>();
         enemy.RemoveHealth(towerInformation.attackDamage);
+        Destroy(this.gameObject);
     }
 
     void OnBecameInvisible()

@@ -7,6 +7,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
+    public double health;
+
+    private void Start()
+    {
+        health = enemyInfo.health;
+    }
 
     public void FollowPath(PathInfo path)
     {
@@ -17,8 +23,8 @@ public class Enemy : MonoBehaviour
 
     public void RemoveHealth(double amount)
     {
-        enemyInfo.health -= amount;
-        if (enemyInfo.health <= 0)
+        health -= amount;
+        if (health <= 0)
         {
             Destroy(gameObject);            
         }

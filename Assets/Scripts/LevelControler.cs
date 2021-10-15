@@ -1,81 +1,67 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelControler : MonoBehaviour
 {
-
     public Renderer rend;
+    private string nextLevel;
+    private int nextStartingCash;
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rend.enabled = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (rend.enabled && Input.GetKeyDown(KeyCode.Space))
+            SwitchLevel(nextLevel, nextStartingCash);
+    }
+
+    public void SwitchLevel(string sceneName, int startingCash)
+    {
+        rend.enabled = false;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        Player.Instance.wallet.SetCash(startingCash);
+    }
+
     public void WinScreenAppear()
     {
         rend.enabled = true;
-        Debug.Log("winscreeappears");
+        Debug.Log("Win Screen Appeared");
     }
 
     public void LevelChanger(string level)
     {
+        nextLevel = level;
         switch (level)
         {
             case "MainMenu":
-                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-                Money.MoneySetAmount(0);
+                nextStartingCash = 0;
                 break;
             case "SampleScene":
-                SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-                Money.MoneySetAmount(250);
+                nextStartingCash = 250;
                 break;
 
             case "Level2":
-                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
-                Money.MoneySetAmount(300);
+                nextStartingCash = 300;
                 break;
 
             case "Level3":
-                SceneManager.LoadScene("Level3", LoadSceneMode.Single);
-                Money.MoneySetAmount(400);
+                nextStartingCash = 400;
                 break;
 
             default:
                 Debug.Log("error, levelchanger switch");
                 break;
-      
-
         }
 
         return;
-    }
-
-    public static void GoToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-        Money.MoneySetAmount(0);
-    }
-
-    public static void GoToSampleScene()
-    {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-        Money.MoneySetAmount(250);
-    }
-
-    public static void GoToTutorialPage()
-    {
-        SceneManager.LoadScene("TutorialPage", LoadSceneMode.Single);
-        Money.MoneySetAmount(0);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Scene currentScene = SceneManager.GetActiveScene();
-            string sceneName = currentScene.name;
-            SceneManager.LoadScene(sceneName);
-        }
     }
 }
